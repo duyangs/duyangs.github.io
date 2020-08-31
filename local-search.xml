@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Hexo bug: Error: Spawn failed at ChildProcess.&lt;anonymous&gt;</title>
+    <link href="/2020/08/31/hexo/hexo-bug-spawn-failed/"/>
+    <url>/2020/08/31/hexo/hexo-bug-spawn-failed/</url>
+    
+    <content type="html"><![CDATA[<ul><li>错误信息</li></ul><pre><code class="hljs crystal"><span class="hljs-symbol">fatal:</span> in unpopulated submodule <span class="hljs-string">&#x27;.deploy_git&#x27;</span>FATAL &#123;  <span class="hljs-symbol">err:</span> <span class="hljs-symbol">Error:</span> Spawn failed      at ChildProcess.&lt;anonymous&gt; (<span class="hljs-regexp">/Users/ryandu</span><span class="hljs-regexp">/duyangs.github.io/node</span>_modules/hexo-deployer-git/node_modules/hexo-util/<span class="hljs-class"><span class="hljs-keyword">lib</span>/<span class="hljs-title">spawn</span>.<span class="hljs-title">js</span>:51:21)</span>      at ChildProcess.emit (events.<span class="hljs-symbol">js:</span><span class="hljs-number">314</span>:<span class="hljs-number">20</span>)      at Process.ChildProcess._handle.onexit (internal/child_process.<span class="hljs-symbol">js:</span><span class="hljs-number">276</span>:<span class="hljs-number">12</span>) &#123;    <span class="hljs-symbol">code:</span> <span class="hljs-number">128</span>  &#125;&#125; Something<span class="hljs-string">&#x27;s wrong. Maybe you can find the solution here: %s https://hexo.io/docs/troubleshooting.html</span></code></pre><ul><li>解决方案</li></ul><ol><li>检查<code>_config.yml</code>中的<code>deploy</code>是否正确</li></ol><pre><code class="hljs yaml"><span class="hljs-comment">#示例</span><span class="hljs-attr">deploy:</span>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span>  <span class="hljs-attr">repo:</span> <span class="hljs-string">git@github.com:duyangs/duyangs.github.io.git</span>  <span class="hljs-attr">branch:</span> <span class="hljs-string">master</span></code></pre><ol start="2"><li>检查是否配置了SSH</li><li>删除本地<code>.deploy_git</code>文件夹</li></ol><pre><code class="hljs css"><span class="hljs-selector-tag">rm</span> <span class="hljs-selector-tag">-rf</span> <span class="hljs-selector-class">.deploy_git</span></code></pre><ol start="4"><li>重新执行<code>deploy</code></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Bug</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>重读《大秦帝国》——大事纪</title>
     <link href="/2020/08/31/read/reread-the-great-qin-empire/"/>
     <url>/2020/08/31/read/reread-the-great-qin-empire/</url>

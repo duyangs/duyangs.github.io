@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://duyangs.com/2020/08/31/hexo/hexo-bug-spawn-failed/</loc>
+    
+    <lastmod>2020-08-31</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://duyangs.com/2020/08/31/read/reread-the-great-qin-empire/</loc>
     
     <lastmod>2020-08-31</lastmod>
@@ -46,6 +53,13 @@
   </url>
   
   <url>
+    <loc>http://duyangs.com/tags/Bug/</loc>
+    <lastmod>2020-08-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://duyangs.com/tags/Books/</loc>
     <lastmod>2020-08-31</lastmod>
     <changefreq>daily</changefreq>
@@ -56,6 +70,13 @@
   
   <url>
     <loc>http://duyangs.com/categories/Android/</loc>
+    <lastmod>2020-08-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://duyangs.com/categories/Hexo/</loc>
     <lastmod>2020-08-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
