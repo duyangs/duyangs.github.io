@@ -2,14 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://duyangs.com/2020/08/31/android/android-learning-graph/</loc>
+    <loc>http://duyangs.com/2020/08/31/read/reread-the-great-qin-empire/</loc>
     
     <lastmod>2020-08-31</lastmod>
     
   </url>
   
   <url>
-    <loc>http://duyangs.com/2020/08/28/those-good-books-you-cant-miss/</loc>
+    <loc>http://duyangs.com/2020/08/28/read/those-good-books-you-cant-miss/</loc>
+    
+    <lastmod>2020-08-31</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://duyangs.com/2020/08/31/android/android-learning-graph/</loc>
     
     <lastmod>2020-08-31</lastmod>
     
@@ -18,14 +25,7 @@
   <url>
     <loc>http://duyangs.com/about/index.html</loc>
     
-    <lastmod>2020-08-25</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://duyangs.com/2020/08/25/hello-world/</loc>
-    
-    <lastmod>2020-08-25</lastmod>
+    <lastmod>2020-08-31</lastmod>
     
   </url>
   
