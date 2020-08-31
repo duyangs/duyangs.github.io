@@ -39,14 +39,14 @@
 
   
   <url>
-    <loc>http://duyangs.com/tags/Books/</loc>
+    <loc>http://duyangs.com/tags/Android/</loc>
     <lastmod>2020-08-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://duyangs.com/tags/Android/</loc>
+    <loc>http://duyangs.com/tags/Books/</loc>
     <lastmod>2020-08-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -55,14 +55,14 @@
 
   
   <url>
-    <loc>http://duyangs.com/categories/Read/</loc>
+    <loc>http://duyangs.com/categories/Android/</loc>
     <lastmod>2020-08-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://duyangs.com/categories/Android/</loc>
+    <loc>http://duyangs.com/categories/Read/</loc>
     <lastmod>2020-08-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
