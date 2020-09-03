@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://duyangs.com/2020/09/03/plan/2020-flag/</loc>
+    
+    <lastmod>2020-09-03</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://duyangs.com/2020/09/03/about-learn-fun/</loc>
     
     <lastmod>2020-09-03</lastmod>
@@ -60,6 +67,13 @@
 
   
   <url>
+    <loc>http://duyangs.com/tags/Android/</loc>
+    <lastmod>2020-09-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://duyangs.com/tags/Learn/</loc>
     <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
@@ -67,7 +81,7 @@
   </url>
   
   <url>
-    <loc>http://duyangs.com/tags/Android/</loc>
+    <loc>http://duyangs.com/tags/Flag/</loc>
     <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -90,6 +104,13 @@
 
   
   <url>
+    <loc>http://duyangs.com/categories/Android/</loc>
+    <lastmod>2020-09-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://duyangs.com/categories/Essay/</loc>
     <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
@@ -97,7 +118,7 @@
   </url>
   
   <url>
-    <loc>http://duyangs.com/categories/Android/</loc>
+    <loc>http://duyangs.com/categories/Plan/</loc>
     <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
