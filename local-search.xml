@@ -4,6 +4,56 @@
   
   
   <entry>
+    <title>关于学习方式</title>
+    <link href="/2020/09/03/about-learn-fun/"/>
+    <url>/2020/09/03/about-learn-fun/</url>
+    
+    <content type="html"><![CDATA[<h2 id="学习方法"><a href="#学习方法" class="headerlink" title="学习方法"></a>学习方法</h2><blockquote><p>目前采用WWH方法，在自己整理的文章中后续也会采用次方法进行整理</p></blockquote><ul><li>W what</li><li>W why </li><li>H how</li></ul><p><img src="https://raw.githubusercontent.com/duyangs/OSS/master/imgs/WWH.png"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Essay</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Learn</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>重学Android｜基础｜Activity</title>
+    <link href="/2020/09/01/android/android-learning-basic-activity/"/>
+    <url>/2020/09/01/android/android-learning-basic-activity/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>Android</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Android</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hexo bug: Error: Spawn failed at ChildProcess.&lt;anonymous&gt;</title>
     <link href="/2020/08/31/hexo/hexo-bug-spawn-failed/"/>
     <url>/2020/08/31/hexo/hexo-bug-spawn-failed/</url>

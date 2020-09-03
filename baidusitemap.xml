@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://duyangs.com/2020/09/03/about-learn-fun/</loc>
+    <lastmod>2020-09-03</lastmod>
+  </url>
+  <url>
+    <loc>http://duyangs.com/2020/09/01/android/android-learning-basic-activity/</loc>
+    <lastmod>2020-09-01</lastmod>
+  </url>
+  <url>
     <loc>http://duyangs.com/2020/08/31/hexo/hexo-bug-spawn-failed/</loc>
     <lastmod>2020-08-31</lastmod>
   </url>
