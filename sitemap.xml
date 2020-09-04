@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://duyangs.com/2020/09/03/plan/2020-flag/</loc>
+    
+    <lastmod>2020-09-04</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://duyangs.com/2020/09/04/about-copyright/</loc>
     
     <lastmod>2020-09-04</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://duyangs.com/2020/09/04/about-photograph/</loc>
     
     <lastmod>2020-09-04</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://duyangs.com/2020/09/03/plan/2020-flag/</loc>
-    
-    <lastmod>2020-09-03</lastmod>
     
   </url>
   
@@ -81,13 +81,6 @@
 
   
   <url>
-    <loc>http://duyangs.com/tags/Learn/</loc>
-    <lastmod>2020-09-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://duyangs.com/tags/Copyright/</loc>
     <lastmod>2020-09-04</lastmod>
     <changefreq>daily</changefreq>
@@ -95,14 +88,14 @@
   </url>
   
   <url>
-    <loc>http://duyangs.com/tags/Android/</loc>
+    <loc>http://duyangs.com/tags/Learn/</loc>
     <lastmod>2020-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://duyangs.com/tags/Bug/</loc>
+    <loc>http://duyangs.com/tags/Android/</loc>
     <lastmod>2020-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -122,14 +115,14 @@
     <priority>0.6</priority>
   </url>
   
-
-  
   <url>
-    <loc>http://duyangs.com/categories/Essay/</loc>
+    <loc>http://duyangs.com/tags/Bug/</loc>
     <lastmod>2020-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
+  
+
   
   <url>
     <loc>http://duyangs.com/categories/Blog/</loc>
@@ -139,14 +132,14 @@
   </url>
   
   <url>
-    <loc>http://duyangs.com/categories/Android/</loc>
+    <loc>http://duyangs.com/categories/Essay/</loc>
     <lastmod>2020-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://duyangs.com/categories/Hexo/</loc>
+    <loc>http://duyangs.com/categories/Android/</loc>
     <lastmod>2020-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -161,6 +154,13 @@
   
   <url>
     <loc>http://duyangs.com/categories/Read/</loc>
+    <lastmod>2020-09-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://duyangs.com/categories/Hexo/</loc>
     <lastmod>2020-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
