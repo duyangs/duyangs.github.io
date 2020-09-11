@@ -4,7 +4,7 @@
   <url>
     <loc>http://duyangs.com/2020/09/03/plan/2020-flag/</loc>
     
-    <lastmod>2020-09-04</lastmod>
+    <lastmod>2020-09-11</lastmod>
     
   </url>
   
@@ -74,7 +74,7 @@
 
   <url>
     <loc>http://duyangs.com/</loc>
-    <lastmod>2020-09-04</lastmod>
+    <lastmod>2020-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -82,42 +82,42 @@
   
   <url>
     <loc>http://duyangs.com/tags/Copyright/</loc>
-    <lastmod>2020-09-04</lastmod>
+    <lastmod>2020-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://duyangs.com/tags/Learn/</loc>
-    <lastmod>2020-09-04</lastmod>
+    <lastmod>2020-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://duyangs.com/tags/Android/</loc>
-    <lastmod>2020-09-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://duyangs.com/tags/Flag/</loc>
-    <lastmod>2020-09-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://duyangs.com/tags/Books/</loc>
-    <lastmod>2020-09-04</lastmod>
+    <lastmod>2020-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://duyangs.com/tags/Bug/</loc>
-    <lastmod>2020-09-04</lastmod>
+    <lastmod>2020-09-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://duyangs.com/tags/Flag/</loc>
+    <lastmod>2020-09-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://duyangs.com/tags/Books/</loc>
+    <lastmod>2020-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -126,42 +126,42 @@
   
   <url>
     <loc>http://duyangs.com/categories/Blog/</loc>
-    <lastmod>2020-09-04</lastmod>
+    <lastmod>2020-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://duyangs.com/categories/Essay/</loc>
-    <lastmod>2020-09-04</lastmod>
+    <lastmod>2020-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://duyangs.com/categories/Android/</loc>
-    <lastmod>2020-09-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://duyangs.com/categories/Plan/</loc>
-    <lastmod>2020-09-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://duyangs.com/categories/Read/</loc>
-    <lastmod>2020-09-04</lastmod>
+    <lastmod>2020-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://duyangs.com/categories/Hexo/</loc>
-    <lastmod>2020-09-04</lastmod>
+    <lastmod>2020-09-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://duyangs.com/categories/Plan/</loc>
+    <lastmod>2020-09-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://duyangs.com/categories/Read/</loc>
+    <lastmod>2020-09-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
