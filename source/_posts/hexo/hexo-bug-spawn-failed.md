@@ -1,5 +1,5 @@
 ---
-title: Hexo bug: Error: Spawn failed at ChildProcess.<anonymous>
+title: "Hexo bug: Error: Spawn failed at ChildProcess.<anonymous>"
 date: 2020-08-31 23:40:41
 categories: 
  Hexo
