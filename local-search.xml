@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Git常用命令</title>
+    <link href="/2020/09/25/git/git-command/"/>
+    <url>/2020/09/25/git/git-command/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>特别提醒：文中命令所使用<code>[]</code>皆为强调,实际命令时需去除</p></blockquote><hr><h2 id="branch"><a href="#branch" class="headerlink" title="branch"></a><code>branch</code></h2><h3 id="新建分支"><a href="#新建分支" class="headerlink" title="新建分支"></a>新建分支</h3><pre><code class="hljs git">&#x2F;&#x2F;新建分支并切换到新分支git checkout -b [分支名]&#x2F;&#x2F;新建分支，然后再切换到新的分支git branch [分支名]git checkout [分支名]</code></pre><h3 id="本地分支同步到远程仓库"><a href="#本地分支同步到远程仓库" class="headerlink" title="本地分支同步到远程仓库"></a>本地分支同步到远程仓库</h3><pre><code class="hljs git">&#x2F;&#x2F;同步到远程仓库git push origin [本地分支名]&#x2F;&#x2F;同步到远程仓库并定义远程仓库名git push origin [本地分支名]:[远程仓库分支名]</code></pre><h3 id="修改分支名"><a href="#修改分支名" class="headerlink" title="修改分支名"></a>修改分支名</h3><pre><code class="hljs git">修改本地git branch -m [原分支名] [新分支名]如需同步修改远程，则执行如下命令：1、删除远程分支git push --delete origin [原分支名]2、上传新命名的本地分支git push origin [新分支名]3、建立关联git branch --set-upstream-to origin&#x2F;[新分支名]</code></pre><h3 id="同步远程仓库"><a href="#同步远程仓库" class="headerlink" title="同步远程仓库"></a>同步远程仓库</h3><ol><li>查看远程仓库<pre><code class="hljs git">git remote -v</code></pre></li><li>获取远程仓库代码<pre><code class="hljs git">git fetch origin [远程分支名]</code></pre></li><li>合并<pre><code class="hljs git">git merge origin&#x2F;[远程分支名]</code></pre></li></ol><hr><h2 id="tag"><a href="#tag" class="headerlink" title="tag"></a><code>tag</code></h2><h3 id="新建标签"><a href="#新建标签" class="headerlink" title="新建标签"></a>新建标签</h3><pre><code class="hljs git">git tag -a [标签名] -m &#39;[标签说明]&#39;</code></pre><h3 id="本地标签同步到远程仓库"><a href="#本地标签同步到远程仓库" class="headerlink" title="本地标签同步到远程仓库"></a>本地标签同步到远程仓库</h3><pre><code class="hljs git">上传所有标签git push origin --tags上传指定标签git push origin [标签名]</code></pre>]]></content>
+    
+    
+    <categories>
+      
+      <category>Git</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Git</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>版权声明</title>
     <link href="/2020/09/04/about-copyright/"/>
     <url>/2020/09/04/about-copyright/</url>
