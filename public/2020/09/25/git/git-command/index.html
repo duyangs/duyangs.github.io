@@ -18,7 +18,7 @@
   <meta name="description" content="">
   <meta name="author" content="duyangs">
   <meta name="keywords" content="">
-  <title>版权声明 - DuYangs</title>
+  <title>Git常用命令 - DuYangs</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -161,8 +161,8 @@
               
   <div class="mt-3 post-meta">
     <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-    <time datetime="2020-09-04 10:48" pubdate>
-      2020年9月4日 上午
+    <time datetime="2020-09-25 10:22" pubdate>
+      2020年9月25日 上午
     </time>
   </div>
 
@@ -172,7 +172,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      61 字
+      309 字
     </span>
   
 
@@ -182,7 +182,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      3
        分钟
     </span>
   
@@ -212,16 +212,53 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">版权声明</h1>
+            <h1 style="display: none">Git常用命令</h1>
             
             <div class="markdown-body" id="post-body">
               <blockquote>
-<p><strong>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh">CC BY-SA 4.0 协议</a> ，转载请注明出处！</strong></p>
+<p>特别提醒：文中命令所使用<code>[]</code>皆为强调,实际命令时需去除</p>
 </blockquote>
-<blockquote>
-<p><strong>本博客所有图片，非本人著作，皆收录于 <a href="https://duyangs.com/2020/09/04/about-photograph/">引用图片说明</a>，若侵权请<a href="mailto:duyangs1994@gmail.com">联系我</a>删除！</strong></p>
-</blockquote>
+<hr>
+<h2 id="branch"><a href="#branch" class="headerlink" title="branch"></a><code>branch</code></h2><h3 id="新建分支"><a href="#新建分支" class="headerlink" title="新建分支"></a>新建分支</h3><pre><code class="hljs git">&#x2F;&#x2F;新建分支并切换到新分支
+git checkout -b [分支名]
 
+&#x2F;&#x2F;新建分支，然后再切换到新的分支
+git branch [分支名]
+git checkout [分支名]</code></pre>
+
+<h3 id="本地分支同步到远程仓库"><a href="#本地分支同步到远程仓库" class="headerlink" title="本地分支同步到远程仓库"></a>本地分支同步到远程仓库</h3><pre><code class="hljs git">&#x2F;&#x2F;同步到远程仓库
+git push origin [本地分支名]
+
+&#x2F;&#x2F;同步到远程仓库并定义远程仓库名
+git push origin [本地分支名]:[远程仓库分支名]</code></pre>
+
+<h3 id="修改分支名"><a href="#修改分支名" class="headerlink" title="修改分支名"></a>修改分支名</h3><pre><code class="hljs git">修改本地
+git branch -m [原分支名] [新分支名]
+
+如需同步修改远程，则执行如下命令：
+1、删除远程分支
+git push --delete origin [原分支名]
+2、上传新命名的本地分支
+git push origin [新分支名]
+3、建立关联
+git branch --set-upstream-to origin&#x2F;[新分支名]</code></pre>
+
+<h3 id="同步远程仓库"><a href="#同步远程仓库" class="headerlink" title="同步远程仓库"></a>同步远程仓库</h3><ol>
+<li>查看远程仓库<pre><code class="hljs git">git remote -v</code></pre></li>
+<li>获取远程仓库代码<pre><code class="hljs git">git fetch origin [远程分支名]</code></pre></li>
+<li>合并<pre><code class="hljs git">git merge origin&#x2F;[远程分支名]</code></pre>
+
+
+</li>
+</ol>
+<hr>
+<h2 id="tag"><a href="#tag" class="headerlink" title="tag"></a><code>tag</code></h2><h3 id="新建标签"><a href="#新建标签" class="headerlink" title="新建标签"></a>新建标签</h3><pre><code class="hljs git">git tag -a [标签名] -m &#39;[标签说明]&#39;</code></pre>
+
+<h3 id="本地标签同步到远程仓库"><a href="#本地标签同步到远程仓库" class="headerlink" title="本地标签同步到远程仓库"></a>本地标签同步到远程仓库</h3><pre><code class="hljs git">上传所有标签
+git push origin --tags
+
+上传指定标签
+git push origin [标签名]</code></pre>
             </div>
             <hr>
             <div>
@@ -230,7 +267,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/Blog/">Blog</a>
+                      <a class="hover-with-bg" href="/categories/Git/">Git</a>
                     
                   </div>
                 
@@ -238,7 +275,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Copyright/">Copyright</a>
+                      <a class="hover-with-bg" href="/tags/Git/">Git</a>
                     
                   </div>
                 
@@ -251,18 +288,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/09/25/git/git-command/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Git常用命令</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/09/04/about-photograph/">
-                        <span class="hidden-mobile">引用图片说明</span>
+                      <a href="/2020/09/04/about-copyright/">
+                        <span class="hidden-mobile">版权声明</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -404,7 +435,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "版权声明&nbsp;",
+        "Git常用命令&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
