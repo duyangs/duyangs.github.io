@@ -4,6 +4,44 @@
   
   
   <entry>
+    <title>tips-bitmap</title>
+    <link href="/2020/11/05/tips/tips-bitmap/"/>
+    <url>/2020/11/05/tips/tips-bitmap/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>Android 中使用 Bitmap 的场景很多，整理一些使用过程中的小技巧。</p></blockquote><h4 id="获取本地图片宽高，但不需要Bitmap对象"><a href="#获取本地图片宽高，但不需要Bitmap对象" class="headerlink" title="获取本地图片宽高，但不需要Bitmap对象"></a>获取本地图片宽高，但不需要Bitmap对象</h4><blockquote><p>某些场景需要从本地读取图片的宽高，但是不需要使用这个Bitmap对象</p></blockquote><pre><code class="hljs kotlin"><span class="hljs-keyword">val</span> options: BitmapFactory.Options = BitmapFactory.Options()options.inJustDecodeBounds = <span class="hljs-literal">true</span> <span class="hljs-comment">//这个参数设置为true才有效，</span>BitmapFactory.decodeFile(answerCacheFile.path, options) <span class="hljs-comment">//这里的bitmap是个空</span><span class="hljs-keyword">val</span> width = options.outWidth <span class="hljs-comment">//图片宽</span><span class="hljs-keyword">val</span> height = options.outHeight <span class="hljs-comment">//图片高</span><span class="hljs-comment">//--------------------------------------------------------------------------------</span><span class="hljs-comment">//注意：</span><span class="hljs-comment">//decodeFile()方法返回的类型是Bitmap,但是Java语法，未做非空判断，切记不要写出以下这种形式</span><span class="hljs-keyword">val</span> bitmap:Bitmap = BitmapFactory.decodeFile(answerCacheFile.path, options) <span class="hljs-comment">//这里的bitmap是个空,会报 java.lang.IllegalStateException</span></code></pre>]]></content>
+    
+    
+    <categories>
+      
+      <category>Tips</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Bitmap</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>adb-command</title>
+    <link href="/2020/09/28/android/adb-command/"/>
+    <url>/2020/09/28/android/adb-command/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Git常用命令</title>
     <link href="/2020/09/25/git/git-command/"/>
     <url>/2020/09/25/git/git-command/</url>
