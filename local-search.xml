@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Android UI 样式 Selector 使用</title>
+    <link href="/2020/11/06/android/android-selector/"/>
+    <url>/2020/11/06/android/android-selector/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>Selector 算是比较常用的一个东西，记录些容易遗漏的使用方式。</p></blockquote><h4 id="ImageView-设置触摸焦点事件（其他View同理）"><a href="#ImageView-设置触摸焦点事件（其他View同理）" class="headerlink" title="ImageView 设置触摸焦点事件（其他View同理）"></a>ImageView 设置触摸焦点事件（其他View同理）</h4><ul><li>定义Selector</li></ul><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">selector</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">android:drawable</span>=<span class="hljs-string">&quot;@drawable/ic_sel&quot;</span> <span class="hljs-attr">android:state_checked</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">android:drawable</span>=<span class="hljs-string">&quot;@drawable/ic_sel&quot;</span> <span class="hljs-attr">android:state_focused</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">android:drawable</span>=<span class="hljs-string">&quot;@drawable/ic_sel&quot;</span> <span class="hljs-attr">android:state_pressed</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">android:drawable</span>=<span class="hljs-string">&quot;@drawable/ic_default&quot;</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">selector</span>&gt;</span><span class="hljs-comment">&lt;!-- 重点 顺序，xxxed=&quot;true&quot; 放前面 --&gt;</span></code></pre><ul><li>布局中引用</li></ul><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span></span><span class="hljs-tag">    <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/iv&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:layout_gravity</span>=<span class="hljs-string">&quot;center_vertical&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:background</span>=<span class="hljs-string">&quot;@drawable/bg_selector&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:src</span>=<span class="hljs-string">&quot;@drawable/ic_selector&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:clickable</span>=<span class="hljs-string">&quot;true&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:focusable</span>=<span class="hljs-string">&quot;true&quot;</span></span><span class="hljs-tag">    <span class="hljs-attr">android:visibility</span>=<span class="hljs-string">&quot;visible&quot;</span> /&gt;</span><span class="hljs-comment">&lt;!-- 重点 android:clickable=&quot;true&quot; --&gt;</span></code></pre>]]></content>
+    
+    
+    <categories>
+      
+      <category>Android</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Android</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>tips-bitmap</title>
     <link href="/2020/11/05/tips/tips-bitmap/"/>
     <url>/2020/11/05/tips/tips-bitmap/</url>
