@@ -4,6 +4,81 @@
   
   
   <entry>
+    <title>Gradle 常用命令</title>
+    <link href="/2020/11/23/gradle/gradle-command/"/>
+    <url>/2020/11/23/gradle/gradle-command/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>整理Gradle常用命令</p></blockquote><h4 id="强制清除Gradle依赖缓存"><a href="#强制清除Gradle依赖缓存" class="headerlink" title="强制清除Gradle依赖缓存"></a>强制清除<code>Gradle</code>依赖缓存</h4><pre><code class="hljs groovy">./gradlew build --refresh-dependencies</code></pre>]]></content>
+    
+    
+    <categories>
+      
+      <category>Gradle</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Gradle</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Homebrew 常用指令</title>
+    <link href="/2020/11/10/tips/homebrew-command/"/>
+    <url>/2020/11/10/tips/homebrew-command/</url>
+    
+    <content type="html"><![CDATA[<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><ul><li>更新Homebrew自己</li></ul><pre><code class="hljs ebnf"><span class="hljs-attribute">brew update</span></code></pre><ul><li>查看需要更新的包</li></ul><pre><code class="hljs ebnf"><span class="hljs-attribute">brew outdated</span></code></pre><ul><li>更新包</li></ul><pre><code class="hljs awk">brew upgrade <span class="hljs-regexp">//</span>更新所有包brew upgrade <span class="hljs-variable">$FORMULA</span> <span class="hljs-regexp">//</span>更新指定包</code></pre><ul><li>清理旧版本</li></ul><pre><code class="hljs awk">brew cleanup <span class="hljs-regexp">//</span>清理所有包的旧版本brew cleanup <span class="hljs-variable">$FORMULA</span> <span class="hljs-regexp">//</span>清理指定包的旧版本brew cleanup -n <span class="hljs-regexp">//</span>查看可清理的旧版本包，不执行实际操作</code></pre><h3 id="锁定包（不想更新）"><a href="#锁定包（不想更新）" class="headerlink" title="锁定包（不想更新）"></a>锁定包（不想更新）</h3><pre><code class="hljs awk">brew pin <span class="hljs-variable">$FORMULA</span> <span class="hljs-regexp">//</span>锁定某个包brew uppin <span class="hljs-variable">$FORMULA</span> <span class="hljs-regexp">//</span>取消锁定</code></pre><h3 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h3><ul><li>包信息</li></ul><pre><code class="hljs awk">brew info <span class="hljs-variable">$FORMULA</span> <span class="hljs-regexp">//</span>显示某包的信息brew info <span class="hljs-regexp">//</span>显示安装了包数量，文件数量，和总占用空间brew deps --installed --tree <span class="hljs-regexp">//</span>查看已安装的包的依赖，树形显示</code></pre><ul><li>列出已安装的包</li></ul><pre><code class="hljs applescript">brew <span class="hljs-built_in">list</span></code></pre><h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><pre><code class="hljs awk">brew rm <span class="hljs-variable">$FORMULA</span> <span class="hljs-regexp">//</span>删除某个包brew uninstall --force <span class="hljs-variable">$FORMULA</span> <span class="hljs-regexp">//</span>删除所有版本</code></pre>]]></content>
+    
+    
+    <categories>
+      
+      <category>Tips</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Homebrew</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Kotlin 单例实现方式</title>
+    <link href="/2020/11/09/kotlin/kotlin-singleton-pattern/"/>
+    <url>/2020/11/09/kotlin/kotlin-singleton-pattern/</url>
+    
+    <content type="html"><![CDATA[<h2 id="静态内部类"><a href="#静态内部类" class="headerlink" title="静态内部类"></a>静态内部类</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>Kotlin</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Design-Pattern</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Android UI 样式 Selector 使用</title>
     <link href="/2020/11/06/android/android-selector/"/>
     <url>/2020/11/06/android/android-selector/</url>

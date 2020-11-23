@@ -18,7 +18,7 @@
   <meta name="description" content="">
   <meta name="author" content="duyangs">
   <meta name="keywords" content="">
-  <title>Android UI 样式 Selector 使用 - DuYangs</title>
+  <title>Homebrew 常用指令 - DuYangs</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -161,8 +161,8 @@
               
   <div class="mt-3 post-meta">
     <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-    <time datetime="2020-11-06 14:26" pubdate>
-      2020年11月6日 下午
+    <time datetime="2020-11-10 10:02" pubdate>
+      2020年11月10日 上午
     </time>
   </div>
 
@@ -172,7 +172,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      200 字
+      189 字
     </span>
   
 
@@ -182,7 +182,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3
+      2
        分钟
     </span>
   
@@ -212,40 +212,55 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">Android UI 样式 Selector 使用</h1>
+            <h1 style="display: none">Homebrew 常用指令</h1>
             
             <div class="markdown-body" id="post-body">
-              <blockquote>
-<p>Selector 算是比较常用的一个东西，记录些容易遗漏的使用方式。</p>
-</blockquote>
-<h4 id="ImageView-设置触摸焦点事件（其他View同理）"><a href="#ImageView-设置触摸焦点事件（其他View同理）" class="headerlink" title="ImageView 设置触摸焦点事件（其他View同理）"></a>ImageView 设置触摸焦点事件（其他View同理）</h4><ul>
-<li>定义Selector</li>
+              <h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><ul>
+<li>更新Homebrew自己</li>
 </ul>
-<pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">selector</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">android:drawable</span>=<span class="hljs-string">&quot;@drawable/ic_sel&quot;</span> <span class="hljs-attr">android:state_checked</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">android:drawable</span>=<span class="hljs-string">&quot;@drawable/ic_sel&quot;</span> <span class="hljs-attr">android:state_focused</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">android:drawable</span>=<span class="hljs-string">&quot;@drawable/ic_sel&quot;</span> <span class="hljs-attr">android:state_pressed</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">android:drawable</span>=<span class="hljs-string">&quot;@drawable/ic_default&quot;</span> /&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">selector</span>&gt;</span>
-
-<span class="hljs-comment">&lt;!-- 重点 顺序，xxxed=&quot;true&quot; 放前面 --&gt;</span></code></pre>
+<pre><code class="hljs ebnf"><span class="hljs-attribute">brew update</span></code></pre>
 
 <ul>
-<li>布局中引用</li>
+<li>查看需要更新的包</li>
 </ul>
-<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/iv&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">android:layout_gravity</span>=<span class="hljs-string">&quot;center_vertical&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">android:background</span>=<span class="hljs-string">&quot;@drawable/bg_selector&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">android:src</span>=<span class="hljs-string">&quot;@drawable/ic_selector&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">android:clickable</span>=<span class="hljs-string">&quot;true&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">android:focusable</span>=<span class="hljs-string">&quot;true&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">android:visibility</span>=<span class="hljs-string">&quot;visible&quot;</span> /&gt;</span>
+<pre><code class="hljs ebnf"><span class="hljs-attribute">brew outdated</span></code></pre>
 
-<span class="hljs-comment">&lt;!-- 重点 android:clickable=&quot;true&quot; --&gt;</span></code></pre>
+<ul>
+<li>更新包</li>
+</ul>
+<pre><code class="hljs awk">brew upgrade <span class="hljs-regexp">//</span>更新所有包
+brew upgrade <span class="hljs-variable">$FORMULA</span> <span class="hljs-regexp">//</span>更新指定包</code></pre>
+
+<ul>
+<li>清理旧版本</li>
+</ul>
+<pre><code class="hljs awk">brew cleanup <span class="hljs-regexp">//</span>清理所有包的旧版本
+brew cleanup <span class="hljs-variable">$FORMULA</span> <span class="hljs-regexp">//</span>清理指定包的旧版本
+brew cleanup -n <span class="hljs-regexp">//</span>查看可清理的旧版本包，不执行实际操作</code></pre>
+
+
+
+<h3 id="锁定包（不想更新）"><a href="#锁定包（不想更新）" class="headerlink" title="锁定包（不想更新）"></a>锁定包（不想更新）</h3><pre><code class="hljs awk">brew pin <span class="hljs-variable">$FORMULA</span> <span class="hljs-regexp">//</span>锁定某个包
+brew uppin <span class="hljs-variable">$FORMULA</span> <span class="hljs-regexp">//</span>取消锁定</code></pre>
+
+
+
+<h3 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h3><ul>
+<li>包信息</li>
+</ul>
+<pre><code class="hljs awk">brew info <span class="hljs-variable">$FORMULA</span> <span class="hljs-regexp">//</span>显示某包的信息
+brew info <span class="hljs-regexp">//</span>显示安装了包数量，文件数量，和总占用空间
+brew deps --installed --tree <span class="hljs-regexp">//</span>查看已安装的包的依赖，树形显示</code></pre>
+
+<ul>
+<li>列出已安装的包</li>
+</ul>
+<pre><code class="hljs applescript">brew <span class="hljs-built_in">list</span></code></pre>
+
+
+
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><pre><code class="hljs awk">brew rm <span class="hljs-variable">$FORMULA</span> <span class="hljs-regexp">//</span>删除某个包
+brew uninstall --force <span class="hljs-variable">$FORMULA</span> <span class="hljs-regexp">//</span>删除所有版本</code></pre>
 
 
             </div>
@@ -256,7 +271,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/Android/">Android</a>
+                      <a class="hover-with-bg" href="/categories/Tips/">Tips</a>
                     
                   </div>
                 
@@ -264,7 +279,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Android/">Android</a>
+                      <a class="hover-with-bg" href="/tags/Homebrew/">Homebrew</a>
                     
                   </div>
                 
@@ -277,9 +292,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/11/09/kotlin/kotlin-singleton-pattern/">
+                      <a href="/2020/11/23/gradle/gradle-command/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Kotlin 单例实现方式</span>
+                        <span class="hidden-mobile">Gradle 常用命令</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -287,8 +302,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/11/05/tips/tips-bitmap/">
-                        <span class="hidden-mobile">tips-bitmap</span>
+                      <a href="/2020/11/09/kotlin/kotlin-singleton-pattern/">
+                        <span class="hidden-mobile">Kotlin 单例实现方式</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -430,7 +445,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Android UI 样式 Selector 使用&nbsp;",
+        "Homebrew 常用指令&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
