@@ -4,6 +4,56 @@
   
   
   <entry>
+    <title>Android多渠道打包</title>
+    <link href="/2021/02/01/android/android-multi-channel/"/>
+    <url>/2021/02/01/android/android-multi-channel/</url>
+    
+    <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><blockquote><p>针对不同平台打包，时间，效率等方面提升的需要。</p></blockquote><h3 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h3><blockquote><p>通过<code>Gradle</code>自定义配置及、工程结构特殊配置实现打包过程时间效率的提示</p></blockquote><h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><blockquote><p>实现多渠道，多版本，动态替换包名、图片、资源文件。</p></blockquote><h2 id="详细说明"><a href="#详细说明" class="headerlink" title="详细说明"></a>详细说明</h2><h3 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a>Gradle</h3><ul><li>buildTypes 定义</li></ul><pre><code class="hljs groovy">buildTypes &#123;        release &#123;            minifyEnabled <span class="hljs-literal">false</span>            proguardFiles getDefaultProguardFile(<span class="hljs-string">&#x27;proguard-android-optimize.txt&#x27;</span>), <span class="hljs-string">&#x27;proguard-rules.pro&#x27;</span>        &#125;        debug &#123;            applicationIdSuffix <span class="hljs-string">&quot;.debug&quot;</span>            minifyEnabled <span class="hljs-literal">false</span>        &#125;    &#125;</code></pre><blockquote><p><code>buildTypes</code>声明编译类型，常规可以设置 <code>release</code>、<code>debug</code>、<code>beta</code>等，可根据实际情况，定义相应属性配置，eg:是否混淆，最小化等</p></blockquote><ul><li>productFlavors 定义</li></ul><pre><code class="hljs groovy"><span class="hljs-comment">//给定风格纬度</span>    flavorDimensions <span class="hljs-string">&quot;platform&quot;</span>    productFlavors &#123;        <span class="hljs-comment">//Android 平台 app</span>        androidapp &#123;            dimension <span class="hljs-string">&quot;platform&quot;</span>            applicationId <span class="hljs-string">&quot;com.example.multichannel.androidapp&quot;</span>            manifestPlaceholders = [<span class="hljs-attr">PACKAGE_NAME:</span><span class="hljs-string">&quot;com.example.multichannel.androidapp&quot;</span>]            versionCode = <span class="hljs-number">101</span>            versionName = <span class="hljs-string">&quot;1.0.1&quot;</span>        &#125;        <span class="hljs-comment">//Eink 平台 app</span>        einkapp &#123;            dimension <span class="hljs-string">&quot;platform&quot;</span>            applicationId <span class="hljs-string">&quot;com.example.multichannel.einkapp&quot;</span>            manifestPlaceholders = [<span class="hljs-attr">PACKAGE_NAME:</span><span class="hljs-string">&quot;com.example.multichannel.androidapp&quot;</span>]            versionCode = <span class="hljs-number">102</span>            versionName = <span class="hljs-string">&quot;1.0.2&quot;</span>        &#125;        <span class="hljs-comment">//其他 平台 app</span>        otherapp &#123;            dimension <span class="hljs-string">&quot;platform&quot;</span>            applicationId <span class="hljs-string">&quot;com.example.multichannel.otherapp&quot;</span>            manifestPlaceholders = [<span class="hljs-attr">PACKAGE_NAME:</span><span class="hljs-string">&quot;com.example.multichannel.otherapp&quot;</span>]            versionCode = <span class="hljs-number">103</span>            versionName = <span class="hljs-string">&quot;1.0.3&quot;</span>        &#125;    &#125;</code></pre><blockquote><p><code>flavorDimensions &quot;platform</code> 3.0(Android Studio Gradle plugin)之后需要明确声明分割，并且在渠道内明确声明<code>dimension</code></p><p>同样，渠道声明内部也可以定义相应属性配置</p><p>与<code>buildTypes</code>组合可以形成对应的 <code>flavors + buildTypes</code>包</p></blockquote><ul><li>定义输出.apk文件名</li></ul><pre><code class="hljs groovy"><span class="hljs-comment">// 输出文件配置</span>    applicationVariants.all &#123; variant -&gt;        variant.getPackageApplicationProvider().get().outputScope.apkDatas.forEach &#123; apkData -&gt;            apkData.outputFileName = <span class="hljs-string">&quot;multi-channel-$&#123;variant.flavorName&#125;-$&#123;variant.versionName&#125;-$&#123;variant.buildType.name&#125;.apk&quot;</span>        &#125;    &#125;</code></pre><blockquote><p>以上代码表示，输出apk会自动打包成 :</p><p><code>multi-channel-[flavorName]-[versionName]-[buildType].apk</code></p><p>Eg: <strong>buildTypes</strong>为<code>release</code>,<strong>flavor</strong>为<code>einkapp</code>则会生成 <code>multi-channel-einkapp-1.0.2-release.apk</code></p></blockquote><p>###动态替换包名、图片、资源文件</p> <img src="https://raw.githubusercontent.com/duyangs/OSS/master/imgs/image-20200322224333612.png" alt="image-20200322224333612" style="zoom:50%;" /><blockquote><p>如图在<code>src</code>下，新建与渠道同名包，将对应渠道的资源放入其中（目录结构与<code>main</code>相同）</p><p><em>注意：相同资源需要同名</em></p><p>因资源文件种类众多，不做赘述，更多内容可查看源码</p></blockquote><h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><img src="https://raw.githubusercontent.com/duyangs/OSS/master/imgs/image-20200322224816222.png" alt="image-20200322224816222" style="zoom:50%;" /><img src="https://raw.githubusercontent.com/duyangs/OSS/master/imgs/image-20200322224913843.png" alt="image-20200322224913843" style="zoom:50%;" /><blockquote><p>打包过程无区别，可以选择需要的版本进行打包，支持单个或多个，打包好后会在<code>app</code>目录下生成对应的渠道包，在渠道包下生成对应的构建类型包，如图：</p></blockquote><img src="https://raw.githubusercontent.com/duyangs/OSS/master/imgs/image-20200322225228272.png" alt="image-20200322225228272" style="zoom:50%;" /><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><blockquote><p>到此，多渠道打包，动态替换包名、图片、资源文件功能需求已完成，后续也可根据实际情况，进行近一步的定制。</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>Android</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MultiChannel</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2021-flag</title>
+    <link href="/2021/02/01/plan/2021-flag/"/>
+    <url>/2021/02/01/plan/2021-flag/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>2021开始，在年底前立些flag，以此激励自己珍惜时间</p></blockquote><ul><li>LeetCode完成200题，当前进度27/200</li></ul><blockquote><p>很早之前就在LeetCode上刷题，但是没有坚持，现在重新开始。</p><p><a href="https://github.com/duyangs/LeetCode">https://github.com/duyangs/LeetCode</a></p></blockquote><ul><li>完成重学Android的学习梳理过程，当前进度0/100</li></ul><blockquote><p>虽然一直在做Android，而且定期都会做梳理，但是还是觉得有些零散，此计划就是将已有知识系统化，让自己成长的基石更加稳固。</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>Plan</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Flag</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Gradle 常用命令</title>
     <link href="/2020/11/23/gradle/gradle-command/"/>
     <url>/2020/11/23/gradle/gradle-command/</url>
@@ -129,13 +179,25 @@
   
   
   <entry>
-    <title>adb-command</title>
+    <title>ADB常用命令</title>
     <link href="/2020/09/28/android/adb-command/"/>
     <url>/2020/09/28/android/adb-command/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<blockquote><p>整理经常使用的<code>adb</code>命令</p></blockquote><h4 id="安装App"><a href="#安装App" class="headerlink" title="安装App"></a>安装App</h4><pre><code class="hljs shell">adb install xxx/xxx.apk</code></pre><h4 id="卸载App"><a href="#卸载App" class="headerlink" title="卸载App"></a>卸载App</h4><pre><code class="hljs shell">adb uninstall [packagename]</code></pre><h4 id="查看系统版本"><a href="#查看系统版本" class="headerlink" title="查看系统版本"></a>查看系统版本</h4><pre><code class="hljs shell">adb shell getprop ro.build.version.release</code></pre><h4 id="查看系统API版本"><a href="#查看系统API版本" class="headerlink" title="查看系统API版本"></a>查看系统API版本</h4><pre><code class="hljs shell">adb shell getprop ro.build.version.sdk</code></pre><h4 id="手机相关制造商信息"><a href="#手机相关制造商信息" class="headerlink" title="手机相关制造商信息"></a>手机相关制造商信息</h4><pre><code class="hljs shell">adb shell getprop | grep &quot;model\|version.sdk\|manufacturer\|hardware\|platform\|revision\|serialno\|product.name\|brand&quot;</code></pre><h4 id="允许应用最大内存"><a href="#允许应用最大内存" class="headerlink" title="允许应用最大内存"></a>允许应用最大内存</h4><pre><code class="hljs shell">adb shell getprop dalvik.vm.heapgrowthlimit</code></pre><h4 id="应用初始内存"><a href="#应用初始内存" class="headerlink" title="应用初始内存"></a>应用初始内存</h4><pre><code class="hljs shell">adb shell getprop dalvik.vm.heapstartsize</code></pre><h4 id="可支持的应用最大内存"><a href="#可支持的应用最大内存" class="headerlink" title="可支持的应用最大内存"></a>可支持的应用最大内存</h4><blockquote><p>默认为<code>heapgrowthlimit</code>, 启用时需要在<code>Application</code>设置<code>android:largeHeap=&quot;true&quot;</code></p></blockquote><pre><code class="hljs shell">adb shell getprop dalvik.vm.heapsize</code></pre><h4 id="获取应用内存信息"><a href="#获取应用内存信息" class="headerlink" title="获取应用内存信息"></a>获取应用内存信息</h4><pre><code class="hljs shell">adb shell dumpsys meminfo [packagename]</code></pre><p><a href="https://zhuanlan.zhihu.com/p/89060003">https://zhuanlan.zhihu.com/p/89060003</a></p>]]></content>
     
     
+    <categories>
+      
+      <category>ADB</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ADB</tag>
+      
+    </tags>
     
   </entry>
   
@@ -209,31 +271,6 @@
     <tags>
       
       <tag>Copyright</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>2020-flag</title>
-    <link href="/2020/09/03/plan/2020-flag/"/>
-    <url>/2020/09/03/plan/2020-flag/</url>
-    
-    <content type="html"><![CDATA[<blockquote><p>2020快结束了，再年底前立些flag，以此激励自己珍惜时间</p></blockquote><ul><li>LeetCode完成200题，当前进度27/200</li></ul><blockquote><p>很早之前就在LeetCode上刷题，但是没有坚持，现在重新开始。</p><p><a href="https://github.com/duyangs/LeetCode">https://github.com/duyangs/LeetCode</a></p></blockquote><ul><li>完成重学Android的学习梳理过程，当前进度0/100</li></ul><blockquote><p>虽然一直在做Android，而且定期都会做梳理，但是还是觉得有些零散，此计划就是将已有知识系统化，让自己成长的基石更加稳固。</p></blockquote>]]></content>
-    
-    
-    <categories>
-      
-      <category>Plan</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Flag</tag>
       
     </tags>
     

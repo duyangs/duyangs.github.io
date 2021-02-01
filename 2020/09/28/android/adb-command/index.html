@@ -18,7 +18,7 @@
   <meta name="description" content="">
   <meta name="author" content="duyangs">
   <meta name="keywords" content="">
-  <title>adb-command - DuYangs</title>
+  <title>ADB常用命令 - DuYangs</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -172,7 +172,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      0 字
+      152 字
     </span>
   
 
@@ -182,7 +182,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      2
        分钟
     </span>
   
@@ -212,15 +212,56 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">adb-command</h1>
+            <h1 style="display: none">ADB常用命令</h1>
             
             <div class="markdown-body" id="post-body">
-              
+              <blockquote>
+<p>整理经常使用的<code>adb</code>命令</p>
+</blockquote>
+<h4 id="安装App"><a href="#安装App" class="headerlink" title="安装App"></a>安装App</h4><pre><code class="hljs shell">adb install xxx/xxx.apk</code></pre>
+
+<h4 id="卸载App"><a href="#卸载App" class="headerlink" title="卸载App"></a>卸载App</h4><pre><code class="hljs shell">adb uninstall [packagename]</code></pre>
+
+<h4 id="查看系统版本"><a href="#查看系统版本" class="headerlink" title="查看系统版本"></a>查看系统版本</h4><pre><code class="hljs shell">adb shell getprop ro.build.version.release</code></pre>
+
+<h4 id="查看系统API版本"><a href="#查看系统API版本" class="headerlink" title="查看系统API版本"></a>查看系统API版本</h4><pre><code class="hljs shell">adb shell getprop ro.build.version.sdk</code></pre>
+
+<h4 id="手机相关制造商信息"><a href="#手机相关制造商信息" class="headerlink" title="手机相关制造商信息"></a>手机相关制造商信息</h4><pre><code class="hljs shell">adb shell getprop | grep &quot;model\|version.sdk\|manufacturer\|hardware\|platform\|revision\|serialno\|product.name\|brand&quot;</code></pre>
+
+<h4 id="允许应用最大内存"><a href="#允许应用最大内存" class="headerlink" title="允许应用最大内存"></a>允许应用最大内存</h4><pre><code class="hljs shell">adb shell getprop dalvik.vm.heapgrowthlimit</code></pre>
+
+<h4 id="应用初始内存"><a href="#应用初始内存" class="headerlink" title="应用初始内存"></a>应用初始内存</h4><pre><code class="hljs shell">adb shell getprop dalvik.vm.heapstartsize</code></pre>
+
+<h4 id="可支持的应用最大内存"><a href="#可支持的应用最大内存" class="headerlink" title="可支持的应用最大内存"></a>可支持的应用最大内存</h4><blockquote>
+<p>默认为<code>heapgrowthlimit</code>, 启用时需要在<code>Application</code>设置<code>android:largeHeap=&quot;true&quot;</code></p>
+</blockquote>
+<pre><code class="hljs shell">adb shell getprop dalvik.vm.heapsize</code></pre>
+
+<h4 id="获取应用内存信息"><a href="#获取应用内存信息" class="headerlink" title="获取应用内存信息"></a>获取应用内存信息</h4><pre><code class="hljs shell">adb shell dumpsys meminfo [packagename]</code></pre>
+
+
+
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/89060003">https://zhuanlan.zhihu.com/p/89060003</a></p>
+
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/ADB/">ADB</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/ADB/">ADB</a>
+                    
+                  </div>
                 
               </div>
               
@@ -384,7 +425,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "adb-command&nbsp;",
+        "ADB常用命令&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

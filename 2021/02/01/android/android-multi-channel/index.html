@@ -18,7 +18,7 @@
   <meta name="description" content="">
   <meta name="author" content="duyangs">
   <meta name="keywords" content="">
-  <title>Gradle 常用命令 - DuYangs</title>
+  <title>Android多渠道打包 - DuYangs</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -161,8 +161,8 @@
               
   <div class="mt-3 post-meta">
     <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-    <time datetime="2020-11-23 13:22" pubdate>
-      2020年11月23日 下午
+    <time datetime="2021-02-01 22:35" pubdate>
+      2021年2月1日 晚上
     </time>
   </div>
 
@@ -172,7 +172,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      20 字
+      616 字
     </span>
   
 
@@ -182,7 +182,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      8
        分钟
     </span>
   
@@ -212,14 +212,110 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">Gradle 常用命令</h1>
+            <h1 style="display: none">Android多渠道打包</h1>
             
             <div class="markdown-body" id="post-body">
-              <blockquote>
-<p>整理Gradle常用命令</p>
+              <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><blockquote>
+<p>针对不同平台打包，时间，效率等方面提升的需要。</p>
 </blockquote>
-<h4 id="强制清除Gradle依赖缓存"><a href="#强制清除Gradle依赖缓存" class="headerlink" title="强制清除Gradle依赖缓存"></a>强制清除<code>Gradle</code>依赖缓存</h4><pre><code class="hljs groovy">./gradlew build --refresh-dependencies</code></pre>
+<h3 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h3><blockquote>
+<p>通过<code>Gradle</code>自定义配置及、工程结构特殊配置实现打包过程时间效率的提示</p>
+</blockquote>
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><blockquote>
+<p>实现多渠道，多版本，动态替换包名、图片、资源文件。</p>
+</blockquote>
+<h2 id="详细说明"><a href="#详细说明" class="headerlink" title="详细说明"></a>详细说明</h2><h3 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a>Gradle</h3><ul>
+<li>buildTypes 定义</li>
+</ul>
+<pre><code class="hljs groovy">buildTypes &#123;
+        release &#123;
+            minifyEnabled <span class="hljs-literal">false</span>
+            proguardFiles getDefaultProguardFile(<span class="hljs-string">&#x27;proguard-android-optimize.txt&#x27;</span>), <span class="hljs-string">&#x27;proguard-rules.pro&#x27;</span>
+        &#125;
+        debug &#123;
+            applicationIdSuffix <span class="hljs-string">&quot;.debug&quot;</span>
+            minifyEnabled <span class="hljs-literal">false</span>
+        &#125;
+    &#125;</code></pre>
 
+<blockquote>
+<p><code>buildTypes</code>声明编译类型，常规可以设置 <code>release</code>、<code>debug</code>、<code>beta</code>等，可根据实际情况，定义相应属性配置，eg:是否混淆，最小化等</p>
+</blockquote>
+<ul>
+<li>productFlavors 定义</li>
+</ul>
+<pre><code class="hljs groovy"><span class="hljs-comment">//给定风格纬度</span>
+    flavorDimensions <span class="hljs-string">&quot;platform&quot;</span>
+
+    productFlavors &#123;
+        <span class="hljs-comment">//Android 平台 app</span>
+        androidapp &#123;
+            dimension <span class="hljs-string">&quot;platform&quot;</span>
+            applicationId <span class="hljs-string">&quot;com.example.multichannel.androidapp&quot;</span>
+            manifestPlaceholders = [<span class="hljs-attr">PACKAGE_NAME:</span><span class="hljs-string">&quot;com.example.multichannel.androidapp&quot;</span>]
+            versionCode = <span class="hljs-number">101</span>
+            versionName = <span class="hljs-string">&quot;1.0.1&quot;</span>
+        &#125;
+        <span class="hljs-comment">//Eink 平台 app</span>
+        einkapp &#123;
+            dimension <span class="hljs-string">&quot;platform&quot;</span>
+            applicationId <span class="hljs-string">&quot;com.example.multichannel.einkapp&quot;</span>
+            manifestPlaceholders = [<span class="hljs-attr">PACKAGE_NAME:</span><span class="hljs-string">&quot;com.example.multichannel.androidapp&quot;</span>]
+            versionCode = <span class="hljs-number">102</span>
+            versionName = <span class="hljs-string">&quot;1.0.2&quot;</span>
+        &#125;
+        <span class="hljs-comment">//其他 平台 app</span>
+        otherapp &#123;
+            dimension <span class="hljs-string">&quot;platform&quot;</span>
+            applicationId <span class="hljs-string">&quot;com.example.multichannel.otherapp&quot;</span>
+            manifestPlaceholders = [<span class="hljs-attr">PACKAGE_NAME:</span><span class="hljs-string">&quot;com.example.multichannel.otherapp&quot;</span>]
+            versionCode = <span class="hljs-number">103</span>
+            versionName = <span class="hljs-string">&quot;1.0.3&quot;</span>
+        &#125;
+    &#125;</code></pre>
+
+<blockquote>
+<p><code>flavorDimensions &quot;platform</code> 3.0(Android Studio Gradle plugin)之后需要明确声明分割，并且在渠道内明确声明<code>dimension</code></p>
+<p>同样，渠道声明内部也可以定义相应属性配置</p>
+<p>与<code>buildTypes</code>组合可以形成对应的 <code>flavors + buildTypes</code>包</p>
+</blockquote>
+<ul>
+<li>定义输出.apk文件名</li>
+</ul>
+<pre><code class="hljs groovy"><span class="hljs-comment">// 输出文件配置</span>
+    applicationVariants.all &#123; variant -&gt;
+        variant.getPackageApplicationProvider().get().outputScope.apkDatas.forEach &#123; apkData -&gt;
+            apkData.outputFileName = <span class="hljs-string">&quot;multi-channel-$&#123;variant.flavorName&#125;-$&#123;variant.versionName&#125;-$&#123;variant.buildType.name&#125;.apk&quot;</span>
+        &#125;
+    &#125;</code></pre>
+
+<blockquote>
+<p>以上代码表示，输出apk会自动打包成 :</p>
+<p><code>multi-channel-[flavorName]-[versionName]-[buildType].apk</code></p>
+<p>Eg: <strong>buildTypes</strong>为<code>release</code>,<strong>flavor</strong>为<code>einkapp</code>则会生成 <code>multi-channel-einkapp-1.0.2-release.apk</code></p>
+</blockquote>
+<p>###动态替换包名、图片、资源文件</p>
+ <img src="https://raw.githubusercontent.com/duyangs/OSS/master/imgs/image-20200322224333612.png" srcset="/img/loading.gif" alt="image-20200322224333612" style="zoom:50%;" />
+
+<blockquote>
+<p>如图在<code>src</code>下，新建与渠道同名包，将对应渠道的资源放入其中（目录结构与<code>main</code>相同）</p>
+<p><em>注意：相同资源需要同名</em></p>
+<p>因资源文件种类众多，不做赘述，更多内容可查看源码</p>
+</blockquote>
+<h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><img src="https://raw.githubusercontent.com/duyangs/OSS/master/imgs/image-20200322224816222.png" srcset="/img/loading.gif" alt="image-20200322224816222" style="zoom:50%;" />
+
+<img src="https://raw.githubusercontent.com/duyangs/OSS/master/imgs/image-20200322224913843.png" srcset="/img/loading.gif" alt="image-20200322224913843" style="zoom:50%;" />
+
+<blockquote>
+<p>打包过程无区别，可以选择需要的版本进行打包，支持单个或多个，打包好后会在<code>app</code>目录下生成对应的渠道包，在渠道包下生成对应的构建类型包，如图：</p>
+</blockquote>
+<img src="https://raw.githubusercontent.com/duyangs/OSS/master/imgs/image-20200322225228272.png" srcset="/img/loading.gif" alt="image-20200322225228272" style="zoom:50%;" />
+
+
+
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><blockquote>
+<p>到此，多渠道打包，动态替换包名、图片、资源文件功能需求已完成，后续也可根据实际情况，进行近一步的定制。</p>
+</blockquote>
 
             </div>
             <hr>
@@ -229,7 +325,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/Gradle/">Gradle</a>
+                      <a class="hover-with-bg" href="/categories/Android/">Android</a>
                     
                   </div>
                 
@@ -237,7 +333,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Gradle/">Gradle</a>
+                      <a class="hover-with-bg" href="/tags/MultiChannel/">MultiChannel</a>
                     
                   </div>
                 
@@ -250,18 +346,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/02/01/plan/2021-flag/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2021-flag</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/11/10/tips/homebrew-command/">
-                        <span class="hidden-mobile">Homebrew 常用指令</span>
+                      <a href="/2021/02/01/plan/2021-flag/">
+                        <span class="hidden-mobile">2021-flag</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -403,7 +493,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Gradle 常用命令&nbsp;",
+        "Android多渠道打包&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
